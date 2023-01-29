@@ -11,7 +11,7 @@ env:
   ARM_CLIENT_SECRET: ${{secrets.secret}}
   ARM_SUBSCRIPTION_ID: ${{secrets.subscription_id}}
   ARM_TENANT_ID: ${{secrets.tenant_id}}
-  ROOT_PATH: '${{ github.workspace }}workflows/src/terraform'
+  ROOT_PATH: '${{ github.workspace }}/terraform'
 
 permissions:
   contents: read
