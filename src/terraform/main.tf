@@ -6,12 +6,12 @@ terraform {
     }
   }
 
- backend "azurerm" {
-    resource_group_name  = "friday-demo-rg"
-    storage_account_name = "sttfstatemgt01"
-    container_name       = "tfstate"
-    key                  = "dev.terraform.tfstate"
-  }
+   backend "azurerm" {
+    resource_group_name = "demorg"
+    storage_account_name = "demorgtfstore"
+    container_name = "terraform"
+    key = "dev.tfstate"
+   }
 }
 
 # Configure the Microsoft Azure Provider
@@ -27,5 +27,5 @@ provider "azurerm" {
 # Create a resource group
 resource "azurerm_resource_group" "rg" {
   name     = "lkg"
-  location = "easrus"
+  location = "eastus"
 }
