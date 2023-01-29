@@ -11,7 +11,7 @@ env:
   ARM_CLIENT_SECRET: ${{secrets.secret}}
   ARM_SUBSCRIPTION_ID: ${{secrets.subscription_id}}
   ARM_TENANT_ID: ${{secrets.tenant_id}}
-  ROOT_PATH: ${{ github.workspace }}
+  ROOT_PATH: '${{ github.workspace }}/lkg/.github/workflows'
 
 permissions:
   contents: read
@@ -41,9 +41,9 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
-      working-directory: LKG
+      working-directory: ${{env.ROOT_PATH}}
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan 
-      working-directory: LKG
+      working-directory: ${{env.ROOT_PATH}}
